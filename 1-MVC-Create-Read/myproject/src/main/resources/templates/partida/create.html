@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partida - Criação</title>
+</head>
+<body>
+    <h1>Criação de Partida</h1>
+    <form method="post" action = "/partidaRead">
+        <label>Local:</label>
+        <input type="text" id="local" name="local"><br><br>
+
+        <label>Data:</label>
+        <input type="date" id="data" name="data"><br><br>
+
+        <label>Horário Início:</label>
+        <input type="time" id="timeBegin" name="timeBegin"><br><br>
+
+        <label>Horário Fim:</label>
+        <input type="time" id="timeEnd" name="timeEnd"><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+</body>
+</html>
