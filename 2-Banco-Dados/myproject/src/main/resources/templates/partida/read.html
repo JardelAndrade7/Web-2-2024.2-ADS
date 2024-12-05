@@ -12,18 +12,18 @@
 <body>
   <h1>Leitura da Partida</h1>
   <label>Local:</label>
-  <label th:text="${partida.local}"></label><br>
+  <label th:text="${modelPartida.localRealizacao}"></label><br>
 
   <label>Data:</label>
-  <label th:text="${partida.data}"></label><br>
+  <label th:text="${modelPartida.dataRealizacao}"></label><br>
 
   <label>Horário Começo:</label>
-  <label th:text="${partida.timeBegin}"></label><br>
+  <label th:text="${modelPartida.timeBegin}"></label><br>
 
   <label>Horário Fim:</label>
-  <label th:text="${partida.timeEnd}"></label><br>
+  <label th:text="${modelPartida.timeEnd}"></label><br>
 
   <label>Duração em Horas:</label>
-  <label th:text="${partida.calculeDuration()}"></label>
+  <label th:text="${modelPartida.calculeDuration()}"></label>
 </body>
 </html>

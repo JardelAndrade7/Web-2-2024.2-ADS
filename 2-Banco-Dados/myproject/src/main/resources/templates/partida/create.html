@@ -10,20 +10,19 @@
 <body>
     <h1>Criação de Partida</h1>
     <form method="post" action = "/partidaRead">
-        <label>Local:</label>
-        <input type="text" id="local" name="local"><br><br>
+        <label for="localRealizacao">Local:</label>
+        <input type="text" id="localRealizacao" name="localRealizacao"><br><br>
 
-        <label>Data:</label>
-        <input type="date" id="data" name="data"><br><br>
+        <label for="dataRealizacao">Data:</label>
+        <input type="date" id="dataRealizacao" name="dataRealizacao"><br><br>
 
-        <label>Horário Início:</label>
+        <label for="timeBegin">Horário Início:</label>
         <input type="time" id="timeBegin" name="timeBegin"><br><br>
 
-        <label>Horário Fim:</label>
+        <label for="timeEnd">Horário Fim:</label>
         <input type="time" id="timeEnd" name="timeEnd"><br><br>
 
         <button type="submit">Enviar</button>
     </form>
-
 </body>
 </html>
