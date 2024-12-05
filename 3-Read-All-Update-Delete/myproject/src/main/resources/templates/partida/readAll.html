@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partida - Leitura de Todas</title>
+</head>
+<body>
+    <a href="/partida/insertDados">Criar Partida</a><br>
+    <table>
+        <thead>
+            <th>Local de Realização</th>
+            <th>Data de Realização</th>
+            <th>Horário de Início</th>
+            <th>Horário de Fim</th>
+            <th>Funcionalidade</th>
+            <th>Funcionalidade</th>
+            <th>Funcionalidade</th>
+        </thead>
+        <tbody>
+            <tr th:each="partida : ${partidas}">
+                <td th:text="${partida.getLocalRealizacao()}"></td>
+                <td th:text="${partida.getDataRealizacao()}"></td>
+                <td th:text="${partida.getTimeBegin()}"></td>
+                <td th:text="${partida.getTimeEnd()}"></td>
+                <td>
+                    <a th:href="@{/partida/readOne?id={id}(id=${partida.getId()})}">Visualizar</a><br>
+                </td>
+                <td>
+                    <a th:href="@{/partida/insertDados?id={id}(id=${partida.getId()})}">Editar</a>
+                </td>
+                <td>
+                    <form action="/partida/delete" method="post">
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="hidden" name="id" th:value="${partida.getId()}">
+                        <input type="submit" value="Deletar">
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>
