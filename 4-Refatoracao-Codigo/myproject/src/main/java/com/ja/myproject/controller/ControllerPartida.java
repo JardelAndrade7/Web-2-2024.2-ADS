@@ -26,7 +26,7 @@ public class ControllerPartida {
     @Autowired
     private RepositoryPartida repositoryPartida;
 
-    @GetMapping("/")
+    @GetMapping
     public ModelAndView readAll (ModelAndView modelAndView) {
         List<ModelPartida> partidas = repositoryPartida.findAll();
         String viewName = "partida/readAll";
@@ -38,10 +38,7 @@ public class ControllerPartida {
 
     @GetMapping("/insertDados")
     public ModelAndView insertDados(Long id, ModelAndView modelAndView){
-        System.out.println();
-        System.out.println("insertDados");
-        System.out.println();
-        String viewName = "partida/create";
+        String viewName = "partida/insertDados";
         if(id!= null){
             ModelPartida modelPartida = repositoryPartida.getReferenceById(id);
             String modelPartidaName = "modelPartida";
@@ -51,16 +48,15 @@ public class ControllerPartida {
         return modelAndView;
     }
 
-    @PostMapping("/save")
+    @PostMapping("/insertDados")
     public String saveInsertDados (ModelPartida modelPartida) {
-        String viewName = "redirect:/partida/";
+        String viewName = "redirect:/partida";
         repositoryPartida.save(modelPartida);
         return viewName;
     }
 
     @GetMapping("/readOne")
-    public ModelAndView readOne (Long id) {
-        ModelAndView modelAndView = new ModelAndView();
+    public ModelAndView readOne (Long id, ModelAndView modelAndView) {
         ModelPartida modelPartida = repositoryPartida.getReferenceById(id);
         String viewName = "partida/readOne";
         String partidaName = "modelPartida";
@@ -69,23 +65,20 @@ public class ControllerPartida {
         return modelAndView;
     }
 
-    @PutMapping("/save")
+    @PutMapping("/insertDados")
     @Transactional
     public String saveUpdateInsertDados (Long id, String localRealizacao, LocalDate dataRealizacao, LocalTime timeBegin, LocalTime timeEnd){
-        System.out.println();
-        System.out.println("put cadastrar transactional atualizar");
-        System.out.println();
         ModelPartida modelPartida = repositoryPartida.getReferenceById(id);
         modelPartida.setLocalRealizacao(localRealizacao);
         modelPartida.setDataRealizacao(dataRealizacao);
         modelPartida.setTimeBegin(timeBegin);
         modelPartida.setTimeEnd(timeEnd);
-        return "redirect:/partida/";
+        return "redirect:/partida";
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping
     public String delete (Long id){
-        String viewName = "redirect:/partida/";
+        String viewName = "redirect:/partida";
         repositoryPartida.deleteById(id);
         return viewName;
     }

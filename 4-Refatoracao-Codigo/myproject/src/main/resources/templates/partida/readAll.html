@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partida - Leitura de Todas</title>
+    <title>Partida - Visualizacao de Todas</title>
 </head>
 <body>
     <a href="/partida/insertDados">Criar Partida</a><br>
     <table>
         <thead>
-            <th>Local de Realização</th>
-            <th>Data de Realização</th>
-            <th>Horário de Início</th>
-            <th>Horário de Fim</th>
-            <th>Funcionalidade</th>
-            <th>Funcionalidade</th>
+            <th>Local de Realização ---- </th>
+            <th>Data de Realização ---- </th>
+            <th>Horário de Início ---- </th>
+            <th>Horário de Fim ---- </th>
+            <th>Funcionalidade ---- </th>
+            <th>Funcionalidade ---- </th>
             <th>Funcionalidade</th>
         </thead>
         <tbody>
@@ -31,7 +31,7 @@
                     <a th:href="@{/partida/insertDados?id={id}(id=${partida.getId()})}">Editar</a>
                 </td>
                 <td>
-                    <form action="/partida/delete" method="post">
+                    <form action="/partida" method="post">
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="id" th:value="${partida.getId()}">
                         <input type="submit" value="Deletar">

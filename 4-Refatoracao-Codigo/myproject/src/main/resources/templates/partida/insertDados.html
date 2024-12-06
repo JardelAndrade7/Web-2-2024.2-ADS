@@ -8,9 +8,9 @@
     <title>Partida - Dados de Uma</title>
 </head>
 <body>
-    <a href="/partida/">Início</a>
+    <a href="/partida">Início</a>
     <h1>Dados da Partida</h1>
-    <form method="post" action = "/partida/save">
+    <form method="post" action = "/partida/insertDados">
         <input th:if="${modelPartida != null}" type="hidden" name="_method" value="put">
         <input type="hidden" name="id" th:value="${modelPartida?.id}">
 
